@@ -9,6 +9,8 @@ class ViewController: UIViewController {
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.register(TableViewCell.self, forCellReuseIdentifier: TableViewCell.cellIdentifier)
+        tableView.dataSource = self
+        tableView.delegate = self
         return tableView
     }()
     
@@ -40,6 +42,7 @@ class ViewController: UIViewController {
         view.backgroundColor = .white
         self.contacts = manager.getContacts()
         setupViews()
+//        manager.deleteAll()
     }
     
     private func setupViews() {
@@ -77,6 +80,7 @@ class ViewController: UIViewController {
         manager.createContact(name: insertTextField.text ?? "", number: 123456, isFavorite: likeButton.isSelected)
         self.contacts = manager.getContacts()
         self.tableView.reloadData()
+        insertTextField.text = ""
     }
     
     private func deleteContact(_ contact: RealmConacts) {
@@ -87,3 +91,21 @@ class ViewController: UIViewController {
     
 }
 
+extension ViewController:UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        contacts?.count ?? 0
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.cellIdentifier, for: indexPath) as? TableViewCell else { return UITableViewCell() }
+        if let contacts = contacts {
+            cell.configure(contacts[indexPath.row])
+            cell.likeAction = { status in
+//            self.manager.updateFavoriteStatus(contactId: contacts[indexPath.row].id, isFavorite:status)
+            }
+        }
+        return cell
+    }
+    
+}

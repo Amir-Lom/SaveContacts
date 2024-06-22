@@ -11,7 +11,6 @@
 		544DA49E2C1D69EB00BEAE63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544DA49D2C1D69EB00BEAE63 /* ViewController.swift */; };
 		544DA4A32C1D69EE00BEAE63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 544DA4A22C1D69EE00BEAE63 /* Assets.xcassets */; };
 		544DA4A62C1D69EE00BEAE63 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 544DA4A52C1D69EE00BEAE63 /* Base */; };
-		544DA4AF2C1D6BBA00BEAE63 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 544DA4AE2C1D6BBA00BEAE63 /* Realm */; };
 		544DA4B42C1D6F3700BEAE63 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 544DA4B32C1D6F3700BEAE63 /* SnapKit */; };
 		544DA4B82C1D719800BEAE63 /* RealmManagerContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544DA4B72C1D719700BEAE63 /* RealmManagerContacts.swift */; };
 		544DA4BA2C1D71D000BEAE63 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544DA4B92C1D71D000BEAE63 /* RealmManager.swift */; };
@@ -37,7 +36,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				544DA4BE2C1D74BB00BEAE63 /* RealmSwift in Frameworks */,
-				544DA4AF2C1D6BBA00BEAE63 /* Realm in Frameworks */,
 				544DA4B42C1D6F3700BEAE63 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,7 +91,6 @@
 			);
 			name = SaveContacts;
 			packageProductDependencies = (
-				544DA4AE2C1D6BBA00BEAE63 /* Realm */,
 				544DA4B32C1D6F3700BEAE63 /* SnapKit */,
 				544DA4BD2C1D74BA00BEAE63 /* RealmSwift */,
 			);
@@ -393,11 +390,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		544DA4AE2C1D6BBA00BEAE63 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 544DA4AD2C1D6BBA00BEAE63 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
 		544DA4B32C1D6F3700BEAE63 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 544DA4B22C1D6F3700BEAE63 /* XCRemoteSwiftPackageReference "SnapKit" */;

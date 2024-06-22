@@ -42,7 +42,17 @@ class RealmManager {
            }
        }
 
-
+    func deleteAll() {
+       db = try! Realm()
+        let contacts = db.objects(RealmConacts.self)
+        try! db.write {
+            for i in contacts {
+                db.delete(i)
+            }
+            deleteAll()
+        }
+    }
+    
     func getContacts() -> Results<RealmConacts>? {
         db = try! Realm()
         return db.objects(RealmConacts.self)

@@ -13,5 +13,6 @@ class RealmConacts: Object {
     @Persisted var name: String = ""
     @Persisted var number: Int = 0
     @Persisted var isFavorite: Bool = false
+    @Persisted(primaryKey: true) var id = 0
 }
 
